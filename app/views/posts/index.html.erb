@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<p>
+  <%= link_to 'New Post', new_post_path %>
+</p>
+<br />
+
+<% @posts.each do |post| %>
+  <!-- <%= image_tag post.image.url %>
+    <%= image_tag post.image.url(:medium) %> -->
+    <p>
+        <%= image_tag post.image.url(:thumb) %><br />
+        <p>
+          <p>
+            <%= post.contents %>
+          </p>
+          <%= link_to 'Show', post %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      <%end%>
+    </p>
+<br>
+
+<%= will_paginate @posts%>
