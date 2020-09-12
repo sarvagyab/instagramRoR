@@ -1,6 +1,8 @@
+<% if post.image.exists? %>
 <p>
     <%= image_tag post.image.url(:thumb) %><br />
 <p>
+<% end %>
 <p>
     <%= post.contents %>
 </p>

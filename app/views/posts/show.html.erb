@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<% if @post.image.exists? %>
 <p>
-  <%= image_tag @post.image.url(:medium) %>
+    <%= image_tag @post.image.url(:medium) %><br />
+<p>
+<% end %>
   <p>
     <strong>Contents:</strong>
     <%= @post.contents %>

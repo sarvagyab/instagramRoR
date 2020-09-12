@@ -1,8 +1,10 @@
 class Post < ApplicationRecord
 
-    has_attached_file :image, size: { in: 0..2.megabytes }, styles: { medium: "600x600>", thumb: "300x300>" }, default_url: "/images/:style/missing.png"
+    has_attached_file :image, size: { in: 0..2.megabytes }, styles: { medium: "600x600>", thumb: "300x300>" }
 
-    validates: image, attachment_presence:true
+    validates :contents, presence:true
+
+    validates :image, attachment_presence:true
     # Validate content type
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
     # Validate filename
