@@ -1,0 +1,11 @@
+<p>
+    <%= image_tag post.image.url(:thumb) %><br />
+<p>
+<p>
+    <%= post.contents %>
+</p>
+<p>
+    <%= link_to 'Show', post %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
